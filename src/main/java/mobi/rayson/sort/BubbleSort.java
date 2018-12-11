@@ -1,5 +1,7 @@
 package mobi.rayson.sort;
 
+import java.util.Arrays;
+
 /***
  *  Created with IntelliJ IDEA.
  *  User:  lirui
@@ -15,9 +17,7 @@ public class BubbleSort {
   public static void main(String[] args) {
     int[] scores = new int[] {1, 6, 2, 0, 3, 7, 10, 54, 37, 85, 9};
     int[] sortedScores = sort(scores);
-    for (int i : sortedScores) {
-      System.out.print(i + " ");
-    }
+    Arrays.stream(sortedScores).mapToObj(score -> score + " ").forEach(System.out::print);
   }
 
   private static int[] sort(int[] scores) {
