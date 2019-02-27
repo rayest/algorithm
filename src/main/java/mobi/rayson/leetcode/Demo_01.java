@@ -5,11 +5,11 @@ package mobi.rayson.leetcode;
  *  User:  lirui
  *  Date:  2019-02-22
  *  Time: 3:33 PM
- *  Description:
+ *  Description: 给定的数组及元素，找出其中两个元素，和为指定的结果
  **/
-public class demo_01 {
+public class Demo_01 {
   public static void main(String[] args) {
-    int[] origin = {-3, 4, 5, 90};
+    int[] origin = {-3, 4, 3, 90};
     int target = 0;
     int[] index = select(origin, target);
     System.out.println(index[0]);
