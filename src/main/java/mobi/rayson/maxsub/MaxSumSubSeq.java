@@ -11,7 +11,8 @@ public class MaxSumSubSeq {
     public static void main(String[] args) {
         int[] a = new int[]{20, 2, 1, -3, 8, 0, 5, -9, -4, 60, -7};
 //        System.out.println(max1(a));
-        System.out.println(max2(a));
+//        System.out.println(max2(a));
+        System.out.println(max3(a));
     }
 
     private static int max1(int[] a) {
@@ -46,5 +47,41 @@ public class MaxSumSubSeq {
             }
         }
         return max;
+    }
+
+    //递归，分治策略
+    //2分logn，for循环n，固O(nlogn)
+    public static int max3(int[] a) {
+        return maxSumRec(a, 0, a.length - 1);
+    }
+
+    public static int maxSumRec(int[] a, int left, int right) {
+        //递归中的基本情况
+        if (left == right) {
+            if (a[left] > 0) return a[left];
+            else return 0;
+        }
+        int center = (left + right) / 2;
+        //最大子序列在左侧
+        int maxLeftSum = maxSumRec(a, left, center);
+        //最大子序列在右侧
+        int maxRightSum = maxSumRec(a, center + 1, right);
+        //最大子序列在中间（左边靠近中间的最大子序列+右边靠近中间的最大子序列）
+        int maxLeftBorderSum = 0, leftBorderSum = 0;
+        for (int i = center; i >= left; i--) {
+            leftBorderSum += a[i];
+            if (leftBorderSum > maxLeftBorderSum) maxLeftBorderSum = leftBorderSum;
+        }
+        int maxRightBorderSum = 0, rightBorderSum = 0;
+        for (int i = center + 1; i <= right; i++) {
+            rightBorderSum += a[i];
+            if (rightBorderSum > maxRightBorderSum) maxRightBorderSum = rightBorderSum;
+        }
+        //返回最大子序列在左侧，在右侧，在中间求出的值中的最大的
+        return max3(maxLeftSum, maxRightSum, maxLeftBorderSum + maxRightBorderSum);
+    }
+
+    public static int max3(int a, int b, int c) {
+        return a > b ? (a > c ? a : c) : (b > c ? b : c);
     }
 }
