@@ -14,12 +14,12 @@ public class FileList {
 
     private static void listDirectoryAndFileNames(File file) {
         File[] files = file.listFiles();
-        for (int i = 0; i < files.length; i++) {
-            if (files[i].isDirectory()) {
-                System.out.println("目录：" + files[i].getName() + "/");
-                listDirectoryAndFileNames(files[i]);
+        for (File value : files) {
+            if (value.isDirectory()) {
+                System.out.println("目录：" + value.getName() + "/");
+                listDirectoryAndFileNames(value);
             } else {
-                System.out.println("文件：" + files[i].getName());
+                System.out.println("文件：" + value.getName());
             }
         }
     }
