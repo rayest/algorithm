@@ -1,9 +1,7 @@
 package mobi.rayson.algorithum.algorithmsbook.tree;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.concurrent.ArrayBlockingQueue;
 
 /**
  * @author lirui
