@@ -1,4 +1,4 @@
-package mobi.rayson.algorithum.algorithmsbook.tree;
+package mobi.rayson.algorithum.algorithmsbook.tree.binarytree;
 
 /**
  * @author lirui

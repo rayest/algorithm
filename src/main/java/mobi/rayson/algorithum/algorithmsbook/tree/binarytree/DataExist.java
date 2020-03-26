@@ -1,6 +1,4 @@
-package mobi.rayson.algorithum.algorithmsbook.tree;
-
-import java.util.TreeMap;
+package mobi.rayson.algorithum.algorithmsbook.tree.binarytree;
 
 /**
  * @author lirui
