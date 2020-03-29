@@ -4,7 +4,7 @@ package mobi.rayson.algorithum.algorithmsbook.tree.bst;
  * @author lirui
  * 查询 data 为 3 的节点是否存在: log2n
  */
-public class BSTIsExist {
+public class IsExist {
     public static void main(String[] args) {
         BinarySearchTreeNode node = BaseBinarySearchTreeNode.init();
         System.out.println(isExist(node, 5));
