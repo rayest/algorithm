@@ -7,7 +7,25 @@ package mobi.rayson.algorithum.algorithmsbook.tree.bst;
 public class BSTIsExist {
     public static void main(String[] args) {
         BinarySearchTreeNode node = BaseBinarySearchTreeNode.init();
-        System.out.println(isExist(node, 6));
+        System.out.println(isExist(node, 5));
+        System.out.println(isExistWithoutRecursion(node, 6));
+    }
+
+    private static boolean isExistWithoutRecursion(BinarySearchTreeNode node, int data) {
+        if (node == null) {
+            return false;
+        }
+        while (node != null) {
+            if (data == node.getData()) {
+                return true;
+            }
+            if (data > node.getData()) {
+                node = node.getRight();
+            } else {
+                node = node.getLeft();
+            }
+        }
+        return false;
     }
 
     private static boolean isExist(BinarySearchTreeNode node, int data) {
